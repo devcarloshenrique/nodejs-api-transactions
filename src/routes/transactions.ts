@@ -4,6 +4,14 @@ import { knex } from "../database"
 import { z } from 'zod'
 
 export async function transactionsRoutes(app: FastifyInstance) {
+    
+    
+    app.get('/summary', async (req, res) => {
+        const summary = await knex('transactions').sum('amount', { as: 'amount' }).first()
+
+        return { summary }
+    })
+
     app.get('/', async (req, reply) => {
         const transactions = await knex('transactions').select()
 
