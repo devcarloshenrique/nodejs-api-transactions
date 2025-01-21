@@ -6,7 +6,7 @@
     "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
     "knex": "node --import tsx ./node_modules/knex/bin/cli.js",
-    "build": "tsc",
+    "build": "tsup src --out-dir build",
     "test": "vitest"
   },
   "keywords": [],
@@ -25,6 +25,7 @@
     "@types/node": "^22.10.6",
     "@types/supertest": "^6.0.2",
     "supertest": "^7.0.0",
+    "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vitest": "^3.0.2"
